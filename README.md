@@ -29,11 +29,11 @@ Sources for Bash Scripting Workshop
 * read/write
 
 ## Advanced
+* pipes
 * subshells
 * sourcing
 * arrays
 * maps
-* pipes
 * output (`2>&1`)
 
 ## More Advanced
@@ -46,6 +46,7 @@ Sources for Bash Scripting Workshop
 * cryptography
     * openssl
 * zenity
+* auto completion
 
 ## Unit Testing
 * bats: https://bats-core.readthedocs.io/en/stable/
