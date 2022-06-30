@@ -30,11 +30,15 @@ Sources for Bash Scripting Workshop
 
 ## Advanced
 * pipes
+    * PIPESTATUS
 * subshells
 * sourcing
 * arrays
 * maps
 * output (`2>&1`)
+* trap
+* bash variables
+    * RANDOM
 
 ## More Advanced
 * [builtins](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html)
@@ -53,3 +57,6 @@ Sources for Bash Scripting Workshop
 
 ## Code checking
 * shellcheck
+
+## More
+* http://www.gnu.org/software/bash/manual/bash.html

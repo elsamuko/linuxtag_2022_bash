@@ -4,6 +4,8 @@
 # shellcheck disable=SC2009
 ps aux | grep 'bash ./'
 lsb_release -r | awk '{print $2}'
+true | false
+echo "PIPESTATUS : ${PIPESTATUS[0]} ${PIPESTATUS[1]}"
 echo
 
 # subshells
@@ -41,5 +43,24 @@ echo
 curl -vs "https://icanhazip.com" 2> request.txt 1> IP.txt
 cat IP.txt
 cat request.txt | grep "< date:"
+mv request.txt bad_foldeR_name/request.txt > out.log 2>&1
+echo "out.log:"
+cat out.log | sed 's/^/    /'
+echo
 
+# trap
+function on_exit {
+    echo
+    echo -e "\033[1;31mI'm called when exiting, so I can clean up\033[0m"
+}
 
+# should be at the beginning of the script
+trap on_exit EXIT
+echo "Still doing sth here"
+echo
+
+# variables
+# http://www.gnu.org/software/bash/manual/bash.html#Bash-Variables
+echo $RANDOM
+echo ${BASH_SOURCE[0]}
+echo
