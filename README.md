@@ -37,12 +37,11 @@ Sources for Bash Scripting Workshop
 * maps
 * output (`2>&1`)
 * trap
-* bash variables
+* [special variables](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html)
     * RANDOM
+    * BASH_SOURCE
 
 ## More Advanced
-* [builtins](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html)
-    * [variables](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html)
 * logging
 * networking
     * nc

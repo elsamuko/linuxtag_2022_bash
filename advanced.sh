@@ -59,8 +59,8 @@ trap on_exit EXIT
 echo "Still doing sth here"
 echo
 
-# variables
+# special variables
 # http://www.gnu.org/software/bash/manual/bash.html#Bash-Variables
-echo $RANDOM
-echo ${BASH_SOURCE[0]}
+echo "$RANDOM"
+echo "${BASH_SOURCE[0]}"
 echo
