@@ -1,0 +1,10 @@
+*
+
+!.gitignore
+
+!*/
+
+!*.md
+!*.sh
+
+tmp
