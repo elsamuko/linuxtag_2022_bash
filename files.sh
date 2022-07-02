@@ -1,29 +1,31 @@
 #!/usr/bin/env bash
 # files demo
 
+mkdir -p tmp
+
 echo "creating a file"
-touch a_file
-ls -l a_file
+touch tmp/a_file
+ls -l tmp/a_file
 echo "removing this file"
-rm a_file
-ls -l a_file
+rm tmp/a_file
+ls -l tmp/a_file
 echo
 
-echo "write" > a_text_file # overwrite with >
-echo "something" >> a_text_file # append with >>
+echo "write" > tmp/a_text_file # overwrite with >
+echo "something" >> tmp/a_text_file # append with >>
 
-cat << EOF >> a_text_file
+cat << EOF >> tmp/a_text_file
 add some
 more lines
 EOF
 
 # read whole file
-CONTENT=$(<a_text_file)
+CONTENT=$(<tmp/a_text_file)
 echo "whole : $CONTENT"
 echo
 
 # read line by line
 while read -r LINE; do
     echo "line : $LINE"
-done < a_text_file
+done < tmp/a_text_file
 echo

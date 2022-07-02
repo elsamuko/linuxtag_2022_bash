@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+mkdir -p tmp
+
 # getopts
 while getopts "hn:" ARG; do
     case "$ARG" in
@@ -63,12 +65,12 @@ done
 echo
 
 # output
-curl -vs "https://icanhazip.com" 2> request.txt 1> IP.txt
-cat IP.txt
-cat request.txt | grep "< date:"
-mv request.txt bad_foldeR_name/request.txt > out.log 2>&1
-echo "out.log:"
-cat out.log | sed 's/^/    /'
+curl -vs "https://icanhazip.com" 2> tmp/request.txt 1> tmp/IP.txt
+cat tmp/IP.txt
+cat tmp/request.txt | grep "< date:"
+mv tmp/request.txt bad_foldeR_name/request.txt > tmp/out.log 2>&1
+echo "tmp/out.log:"
+cat tmp/out.log | sed 's/^/    /'
 echo
 
 # trap

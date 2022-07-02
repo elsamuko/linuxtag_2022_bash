@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+mkdir -p tmp
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck source=logging.sh
 source "$SCRIPT_DIR/logging.sh"
@@ -38,21 +40,21 @@ echo "Hallo netcat" >> /dev/tcp/localhost/10001
 echo
 
 # cryptography
-date > data.txt
+date > tmp/data.txt
 PASSWORD="MoreSecureThanThis"
 
 # encrypt
-openssl enc -e -aes-128-cbc -k "$PASSWORD" -pbkdf2 -in data.txt -base64 > encrypted.txt
-openssl enc -e -aes-128-cbc -k "$PASSWORD" -pbkdf2 -in data.txt -base64 > encrypted2.txt
-diff -sq encrypted.txt encrypted2.txt
-cat encrypted.txt
-cat encrypted2.txt
+openssl enc -e -aes-128-cbc -k "$PASSWORD" -pbkdf2 -in tmp/data.txt -base64 > tmp/encrypted.txt
+openssl enc -e -aes-128-cbc -k "$PASSWORD" -pbkdf2 -in tmp/data.txt -base64 > tmp/encrypted2.txt
+diff -sq tmp/encrypted.txt tmp/encrypted2.txt
+cat tmp/encrypted.txt
+cat tmp/encrypted2.txt
 
-#decrypt
-openssl enc -d -aes-128-cbc -k "$PASSWORD" -pbkdf2 -in encrypted.txt -base64 > decrypted.txt
-openssl enc -d -aes-128-cbc -k "$PASSWORD" -pbkdf2 -in encrypted2.txt -base64 > decrypted2.txt
-diff -sq data.txt decrypted.txt
-diff -sq data.txt decrypted2.txt
+# decrypt
+openssl enc -d -aes-128-cbc -k "$PASSWORD" -pbkdf2 -in tmp/encrypted.txt -base64 > tmp/decrypted.txt
+openssl enc -d -aes-128-cbc -k "$PASSWORD" -pbkdf2 -in tmp/encrypted2.txt -base64 > tmp/decrypted2.txt
+diff -sq tmp/data.txt tmp/decrypted.txt
+diff -sq tmp/data.txt tmp/decrypted2.txt
 echo
 
 # zenity
