@@ -1,11 +1,34 @@
 #!/usr/bin/env bash
 
+# getopts
+while getopts "hn:" ARG; do
+    case "$ARG" in
+        h)
+            echo "Showing --help"
+            exit 0
+            ;;
+        n)
+            NAME="${OPTARG}"
+            ;;
+        ?)
+            exit 2
+            ;;
+    esac
+done
+echo "name argument: $NAME"
+echo
+
 # pipes
 # shellcheck disable=SC2009
 ps aux | grep 'bash ./'
 lsb_release -r | awk '{print $2}'
 true | false
 echo "PIPESTATUS : ${PIPESTATUS[0]} ${PIPESTATUS[1]}"
+# reading from stdin
+if [ ! -t 0 ]; then
+    read INPUT
+    echo "PIPED : $INPUT"
+fi
 echo
 
 # subshells
@@ -60,7 +83,7 @@ echo "Still doing sth here"
 echo
 
 # special variables
-# http://www.gnu.org/software/bash/manual/bash.html#Bash-Variables
+# https://www.gnu.org/software/bash/manual/bash.html#Bash-Variables
 echo "$RANDOM"
 echo "${BASH_SOURCE[0]}"
 echo

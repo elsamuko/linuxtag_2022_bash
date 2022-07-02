@@ -29,8 +29,10 @@ Sources for Bash Scripting Workshop
 * read/write
 
 ## Advanced
+* getopts
 * pipes
     * PIPESTATUS
+    * piped input
 * subshells
 * sourcing
 * arrays
@@ -58,4 +60,4 @@ Sources for Bash Scripting Workshop
 * shellcheck
 
 ## More
-* http://www.gnu.org/software/bash/manual/bash.html
+* https://www.gnu.org/software/bash/manual/bash.html
