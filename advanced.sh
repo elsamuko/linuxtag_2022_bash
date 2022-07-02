@@ -26,8 +26,8 @@ true | false
 echo "PIPESTATUS : ${PIPESTATUS[0]} ${PIPESTATUS[1]}"
 # reading from stdin
 if [ ! -t 0 ]; then
-    read INPUT
-    echo "PIPED : $INPUT"
+    IFS= read -r INPUT
+    echo "PIPED : [$INPUT]"
 fi
 echo
 
