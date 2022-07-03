@@ -39,6 +39,10 @@ log_info "Writing to localhost:10001"
 echo "Hallo netcat" >> /dev/tcp/localhost/10001
 echo
 
+# curl
+curl -s wttr.in/kiel
+echo
+
 # cryptography
 date > tmp/data.txt
 PASSWORD="MoreSecureThanThis"
