@@ -2,6 +2,24 @@
 
 mkdir -p tmp
 
+# getopts
+while getopts "hn:" ARG; do
+    case "$ARG" in
+        h)
+            echo "Showing --help"
+            exit 0
+            ;;
+        n)
+            NAME="${OPTARG}"
+            ;;
+        ?)
+            exit 2
+            ;;
+    esac
+done
+echo "name argument: $NAME"
+echo
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck source=logging.sh
 source "$SCRIPT_DIR/logging.sh"

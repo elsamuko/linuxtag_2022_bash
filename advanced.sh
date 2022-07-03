@@ -2,24 +2,6 @@
 
 mkdir -p tmp
 
-# getopts
-while getopts "hn:" ARG; do
-    case "$ARG" in
-        h)
-            echo "Showing --help"
-            exit 0
-            ;;
-        n)
-            NAME="${OPTARG}"
-            ;;
-        ?)
-            exit 2
-            ;;
-    esac
-done
-echo "name argument: $NAME"
-echo
-
 # pipes
 # shellcheck disable=SC2009
 ps aux | grep 'bash ./'

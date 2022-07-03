@@ -29,7 +29,6 @@ Sources for Bash Scripting Workshop
 * read/write
 
 ## Advanced
-* getopts
 * pipes
     * PIPESTATUS
     * piped input
@@ -44,6 +43,7 @@ Sources for Bash Scripting Workshop
     * BASH_SOURCE
 
 ## More Advanced
+* getopts
 * logging
 * networking
     * nc
