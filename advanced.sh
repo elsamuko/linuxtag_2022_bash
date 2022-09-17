@@ -4,7 +4,7 @@ mkdir -p tmp
 
 # pipes
 # shellcheck disable=SC2009
-ps aux | grep 'bash ./'
+ps aux | grep '[b]ash ./'
 lsb_release -r | awk '{print $2}'
 true | false
 echo "PIPESTATUS : ${PIPESTATUS[0]} ${PIPESTATUS[1]}"
@@ -19,12 +19,14 @@ echo
 MY_IP=$(hostname -I | awk '{print $1}')
 echo "MY_IP : $MY_IP"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+echo "$SCRIPT_DIR"
 echo
 
 # sourcing
 # shellcheck source=functions.sh
 source "$SCRIPT_DIR/functions.sh"
 hello_from_functions ":)"
+echo $NUR_IN_FUNCTIONS
 echo
 
 # arrays
