@@ -1,4 +1,5 @@
 #!/usr/bin/env bats
+# sudo apt install bats
 
 setup() {
     SOURCE_DIR="$( cd "$( dirname "$BATS_TEST_FILENAME" )" >/dev/null 2>&1 && pwd )"
