@@ -5,7 +5,7 @@
 echo "Hallo bash"
 echo -e "Hello\nbash"
 echo -e "\033[1;32mThis is green\033[0m"
-printf "%s\n" "Hallo bash"
+printf "%02.5f\n" "4,5" # LC_NUMERIC beachten
 echo
 
 # functions
@@ -24,9 +24,20 @@ while [ $COUNT != 0 ]; do
     echo "COUNT : $COUNT"
 done
 
+
 if [ $COUNT -lt 2 ]; then
     echo "COUNT is lower than 2"
 fi
+
+# https://stackoverflow.com/a/808740
+# NAME="Hase"
+NAME="5,5"
+if [ "$NAME" -eq "$NAME" ] 2>/dev/null; then
+    echo "$NAME is a number"
+else
+    echo "$NAME is not a number"
+fi
+
 
 case "$1" in
     blah)
@@ -35,8 +46,8 @@ case "$1" in
     blubb)
         echo "Called with blubb"
         ;;
-    d*)
-        echo "Called with d*"
+    d*|D*)
+        echo "Called with d* or D*"
         ;;
     *)
         echo "No matching argument"
