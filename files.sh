@@ -18,6 +18,7 @@ cat << EOF >> tmp/a_text_file
 add some
 more lines
 EOF
+echo -n "Ohne Newline" >> tmp/a_text_file 
 
 # read whole file
 CONTENT=$(<tmp/a_text_file)
@@ -25,7 +26,7 @@ echo "whole : $CONTENT"
 echo
 
 # read line by line
-while read -r LINE; do
+while IFS= read -r LINE || [ -n "$LINE" ]; do
     echo "line : $LINE"
 done < tmp/a_text_file
 echo
