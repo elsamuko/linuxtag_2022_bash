@@ -5,6 +5,9 @@
 echo "Hallo bash"
 echo -e "Hello\nbash"
 echo -e "\033[1;32mThis is green\033[0m"
+# change console title
+# https://man7.org/linux/man-pages/man4/console_codes.4.html
+echo -ne "\033]0;LINUXTAG\007"
 printf "%02.5f\n" "4,5" # LC_NUMERIC beachten
 echo
 
