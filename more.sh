@@ -57,6 +57,13 @@ log_info "Writing to localhost:10001"
 echo "Hallo netcat" >> /dev/tcp/localhost/10001
 echo
 
+# envsubst
+echo "Mein Name ist \$NAME, do not replace \$THIS" > greeting.template
+export NAME="Hase"
+envsubst '$NAME' < greeting.template > greeting.txt
+cat greeting.txt
+echo
+
 # curl
 curl -s wttr.in/kiel
 echo
