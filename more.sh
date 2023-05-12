@@ -38,7 +38,7 @@ echo
 
 # networking
 log_info "Starting netcat"
-nc -u -l 51514& # listen to udp port 51514
+nc -u -l 51514 & # listen to udp port 51514
 NC_PID=$!
 
 log_info "Sending syslog message"
@@ -50,7 +50,7 @@ kill $NC_PID
 echo
 
 log_info "Starting netcat"
-nc -l 10001& # listen to tcp port 10001
+nc -l 10001 & # listen to tcp port 10001
 
 # https://www.gnu.org/software/bash/manual/bash.html#Redirections
 log_info "Writing to localhost:10001"

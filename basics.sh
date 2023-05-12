@@ -23,10 +23,9 @@ done
 
 COUNT=4
 while [ $COUNT != 0 ]; do
-    ((COUNT=COUNT-1)) # math
+    ((COUNT = COUNT - 1)) # math
     echo "COUNT : $COUNT"
 done
-
 
 if [ $COUNT -lt 2 ]; then
     echo "COUNT is lower than 2"
@@ -35,12 +34,11 @@ fi
 # https://stackoverflow.com/a/808740
 # NAME="Hase"
 NAME="5,5"
-if [ "$NAME" -eq "$NAME" ] 2>/dev/null; then
+if [ "$NAME" -eq "$NAME" ] 2> /dev/null; then
     echo "$NAME is a number"
 else
     echo "$NAME is not a number"
 fi
-
 
 case "$1" in
     blah)
@@ -49,7 +47,7 @@ case "$1" in
     blubb)
         echo "Called with blubb"
         ;;
-    d*|D*)
+    d* | D*)
         echo "Called with d* or D*"
         ;;
     *)
@@ -61,8 +59,11 @@ echo
 # variables
 HASE=1
 echo "HASE : $HASE"
-function func { local FOO="foo"; echo "$FOO"; } # only within functions
-export BAR="bar" # available within subshells
+function func {
+    local FOO="foo"
+    echo "$FOO"
+}                   # only within functions
+export BAR="bar"    # available within subshells
 : "${BLUBB:=blubb}" # default assignment
 echo "BLUBB=$BLUBB"
 
@@ -74,4 +75,3 @@ for ARG in "$@"; do
     echo "$ARG"
 done
 echo
-

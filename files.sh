@@ -11,17 +11,17 @@ rm tmp/a_file
 ls -l tmp/a_file
 echo
 
-echo "write" > tmp/a_text_file # overwrite with >
+echo "write" > tmp/a_text_file      # overwrite with >
 echo "something" >> tmp/a_text_file # append with >>
 
 cat << EOF >> tmp/a_text_file
 add some
 more lines
 EOF
-echo -n "Ohne Newline" >> tmp/a_text_file 
+echo -n "Ohne Newline" >> tmp/a_text_file
 
 # read whole file
-CONTENT=$(<tmp/a_text_file)
+CONTENT=$(< tmp/a_text_file)
 echo "whole : $CONTENT"
 echo
 

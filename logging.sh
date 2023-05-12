@@ -13,7 +13,6 @@ function _log {
     local COLOR_GRAY="\033[38;5;245m"
     local COLOR_NEUTRAL="\033[0m"
 
-
     case "$LOG_LEVEL" in
         D*)
             echo -e "$COLOR_GRAY$PREFIX$*$COLOR_NEUTRAL"
