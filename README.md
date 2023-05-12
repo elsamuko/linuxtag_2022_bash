@@ -59,5 +59,8 @@ Sources for Bash Scripting Workshop
 ## Code checking
 * shellcheck
 
+## Code formatting
+* `shfmt -ci -sr -i 4 -w script.sh`
+
 ## More
 * https://www.gnu.org/software/bash/manual/bash.html
